@@ -16,7 +16,7 @@ const ACCESSORY_PRICE = 9.99;
  * @param {String} promptText Prompt to show the user
  * @return {String} User input from stdin
 **/
-var promptUser = function PromptUser(promptText) {
+var promptUser = function promptUser(promptText) {
   var input;
   var answer;
   // Detect if we are running in a browser.
@@ -45,7 +45,7 @@ var promptUser = function PromptUser(promptText) {
  * @param {Number} salesTax Sales tax rate
  * @return {Number} Total sale amount including tax
 */
-var calculateTotal = function CalculateTotal(subtotal, salesTax) {
+var calculateTotal = function calculateTotal(subtotal, salesTax) {
   return subtotal * (1 + salesTax);
 }
 
@@ -56,7 +56,7 @@ var calculateTotal = function CalculateTotal(subtotal, salesTax) {
  * @param {Number} amount The amount to format
  * @return {String} Formatted total for printing
 */
-var formatAmount = function FormatAmount(amount) {
+var formatAmount = function formatAmount(amount) {
   return "\$" + amount.toFixed(2);
 }
 
@@ -72,7 +72,7 @@ var formatAmount = function FormatAmount(amount) {
  *     purchased, and number of accessories bought.
 */
 var buyPhones =
-    function BuyPhones(
+    function buyPhones(
         bankBalance, spendingThreshold, phonePrice, accessoryPrice, salesTax) {
   var amount = phonesPurchased = accessoriesPurchased = 0;
   while (amount + calculateTotal(phonePrice, salesTax) < bankBalance) {
